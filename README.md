@@ -15,17 +15,12 @@ Mimics Rancho's style — motivational, witty, and knowledge-driven.
 
 💬 Real-Time Chat Simulation
 Supports continuous interaction with live message feed.
-
-🎤 (Optional Upgrade) Voice Input & Output
-Can be extended with speech_recognition and pyttsx3 for voice I/O.
 | Technology                           | Purpose                     |
 | ------------------------------------ | --------------------------- |
 | **Python 3.10+**                     | Core programming language   |
 | **Tkinter**                          | GUI development             |
 | **ScrolledText**                     | Scrollable chat area        |
 | **Custom Logic**                     | Rule-based keyword matching |
-| `speech_recognition` *(optional)*    | Convert voice to text       |
-| `pyttsx3` *(optional)*               | Speak Rancho’s responses    |
 | `Cohere/OpenAI API` *(future scope)* | For smarter AI replies      |
 
 🧪 How It Works
