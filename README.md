@@ -24,17 +24,12 @@ The reply is displayed in the GUI, optionally spoken using text-to-speech.
 | Tkinter                | GUI framework               |
 | Cohere API             | Smart AI responses          |
 | `cohere` Python SDK    | Connects to Cohere’s models |
-| `pyttsx3` *(optional)* | Text-to-speech              |
-| `Pillow` *(optional)*  | Avatar/image handling       |
 
-📦 Folder Structure
 Rancho Chatot/
 │
 ├── rancho_gui.py         # Main GUI application
 ├── chatbot_logic.py      # AI interaction with Cohere API
 ├── assets/
-│   ├── rancho.png        # Optional: Avatar image
-│   └── sounds/           # Optional: Sound effects
 ├── README.md             # Project overview
 ├── requirements.txt      # Python dependencies
 └── .env                  # Securely stores API key
