@@ -1,23 +1,67 @@
-🚀 “Pursue excellence, and success will follow.”
-We all grew up hearing Rancho's words echo in our hearts — calm, quirky, and full of wisdom.
-Like many of us, choosing engineering wasn’t just a career move, it was a passion. And Rancho made us believe in that dream. 💡💻
+//here is the upgraded which is powered by AI
 
-So for my CodSoft Internship, I built something close to my heart:
-🎓 Rancho Chatbot — a fun, interactive Python bot that talks like Rancho, thinks like Rancho, and maybe even gives you life advice like Rancho.
+import tkinter as tk
+from tkinter import scrolledtext
+import cohere
+import os
 
-🧠 It’s not powered by fancy AI models (yet), but runs on logic, creativity, and a love for coding — just the way Rancho would've liked.
+# ------------------- Cohere API Setup ------------------- #
+COHERE_API_KEY = "NS30PuoSDzQZQaVqk37t861xaNKfxeTzUKfzu8Re" 
+co = cohere.Client(COHERE_API_KEY)
 
-✨ Features:
-🎤 A dark-themed GUI inspired by Rancho’s calm personality
-🗨️ Rule-based replies that feel like you’re chatting with your favorite 3 Idiots character
-📚 Covers everything from stress and love to machines and marks — all with Rancho’s classic style
-👩‍💻 Made entirely with Python + Tkinter
+# ------------------- Rancho AI Logic ------------------- #
+def ask_rancho(user_input):
+    try:
+        response = co.chat(
+            model="command-r-plus",  # Use "command-r" if "plus" is unavailable
+            message=user_input,
+            chat_history=[],
+            temperature=0.7,
+            prompt_truncation='auto',
+            connectors=[],
+            preamble="You are Rancho from the movie 3 Idiots. You speak like a witty, inspiring engineering student. Your replies are friendly, philosophical, and Indian-style quirky."
+        )
+        return response.text
+    except Exception as e:
+        return "Arre yaar, Rancho ki signal weak hai... Try again later!"
 
-This was more than a project — it was a reminder of why I started coding in the first place.
-Can’t wait to keep building and maybe even upgrade this with real AI soon!
+# ------------------- GUI Setup ------------------- #
+def send_message():
+    user_message = user_input.get()
+    if user_message.strip() == "":
+        return
 
-🔗 [GitHub Link or Demo Video]
-#AllIsWell ❤️
+    chat_area.insert(tk.END, "You: " + user_message + "\n", "user")
+    response = ask_rancho(user_message)
+    chat_area.insert(tk.END, "Rancho: " + response + "\n\n", "bot")
+    user_input.delete(0, tk.END)
 
-#Python #CodSoft #RanchoBot #Tkinter #WomenInTech #InternshipProject #3Idiots #Chatbot #GUI #EngineeringLife
+# Create main window
+window = tk.Tk()
+window.title("Rancho Chatbot 🤖")
+window.geometry("520x500")
+window.config(bg="black")
 
+# Title Label
+title_label = tk.Label(window, text="Chat with Rancho 🧠", font=("Arial", 16, "bold"), bg="black", fg="lightgreen")
+title_label.pack(pady=10)
+
+# Chat display area
+chat_area = scrolledtext.ScrolledText(window, wrap=tk.WORD, width=60, height=20, font=("Courier", 11), bg="black", fg="white", insertbackground="white")
+chat_area.pack(padx=10, pady=5)
+chat_area.config(state=tk.NORMAL)
+
+# Text tag styles
+chat_area.tag_config("user", foreground="cyan")
+chat_area.tag_config("bot", foreground="lightgreen")
+
+# Entry box
+user_input = tk.Entry(window, font=("Arial", 12), bg="#222", fg="white", insertbackground="white")
+user_input.pack(padx=10, pady=10, fill=tk.X)
+
+# Send button
+send_button = tk.Button(window, text="Send", command=send_message, font=("Arial", 12), bg="#444", fg="white")
+send_button.pack(pady=5)
+
+# Run app
+window.mainloop()
