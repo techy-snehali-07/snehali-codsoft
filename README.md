@@ -1,44 +1,41 @@
-🧠 RanchoBot – A GUI-Based Rule-Based Chatbot Inspired by 3 Idiots
-Welcome to RanchoBot — a rule-based chatbot built to simulate the iconic character Ranchoddas Shamaldas Chanchad (Rancho) from the movie 3 Idiots. Designed with humor, wisdom, and inspiration in mind, this bot provides personality-rich responses based on classic Rancho philosophies.
-🎯 Features
-🧠 Rule-Based Intelligence
-Provides predefined responses using if-else logic based on keywords.
+🧠 RanchoBot – An AI-Powered Chatbot Inspired by 3 Idiots
+RanchoBot is a personality-rich chatbot inspired by the legendary character Ranchoddas Shamaldas Chanchad (Rancho) from the movie 3 Idiots. Built using Python and Tkinter, this chatbot delivers quirky, motivational, and witty responses — now powered by Cohere AI for smarter, more dynamic interactions.
 
-🖥️ Graphical Chat Interface
-Built using Tkinter, offering a clean and interactive user interface.
+| Feature                             | Description                                                      |
+| ----------------------------------- | ---------------------------------------------------------------- |
+| 🤖 **AI-Powered Replies**           | Uses Cohere’s command models to generate Rancho-style responses. |
+| 🖥️ **Graphical Chat Interface**    | Built with Tkinter, including a terminal-style dark theme.       |
+| 🧠 **Rancho Personality**           | Replies reflect Rancho’s wisdom, humor, and desi-friendliness.   |
+| 💾 **Chat Log Saving**              | Automatically saves chat history to a file (optional).           |
 
-🎨 Dark Theme GUI
-Terminal-style dark mode interface for a modern, coder-friendly feel.
-
-📜 Character Consistency
-Mimics Rancho's style — motivational, witty, and knowledge-driven.
-
-💬 Real-Time Chat Simulation
-Supports continuous interaction with live message feed.
-| Technology                           | Purpose                     |
-| ------------------------------------ | --------------------------- |
-| **Python 3.10+**                     | Core programming language   |
-| **Tkinter**                          | GUI development             |
-| **ScrolledText**                     | Scrollable chat area        |
-| **Custom Logic**                     | Rule-based keyword matching |
-| `Cohere/OpenAI API` *(future scope)* | For smarter AI replies      |
-
+.
 🧪 How It Works
-User types a message in the input box.
+User types a message into the input box.
 
-The chatbot scans for key phrases like "exam", "machine", "all is well", etc.
+The message is sent to the Cohere API for processing.
 
-Based on matches, it gives motivational or witty replies that reflect Rancho's style.
+Based on context and character prompt, a Rancho-style reply is generated.
 
-Responses are printed to the chat area with user-bot format.
+The reply is displayed in the GUI, optionally spoken using text-to-speech.
 
-The interface has a black background with light-colored text for readability and theme.
+| Technology             | Purpose                     |
+| ---------------------- | --------------------------- |
+| Python 3.10+           | Core development            |
+| Tkinter                | GUI framework               |
+| Cohere API             | Smart AI responses          |
+| `cohere` Python SDK    | Connects to Cohere’s models |
+| `pyttsx3` *(optional)* | Text-to-speech              |
+| `Pillow` *(optional)*  | Avatar/image handling       |
 
-📦 Folder Structure Suggestion
-RanchoBot/
+📦 Folder Structure
+Rancho Chatot/
 │
-├── rancho_gui.py            # Main GUI Application
-├── chatbot_logic.py         # Contains ask_rancho() function
-├── assets/                  # Optional: for sound, icons
-├── README.md                # Project Description
-└── requirements.txt         # List of dependencies (e.g., Tkinter, pyttsx3)
+├── rancho_gui.py         # Main GUI application
+├── chatbot_logic.py      # AI interaction with Cohere API
+├── assets/
+│   ├── rancho.png        # Optional: Avatar image
+│   └── sounds/           # Optional: Sound effects
+├── README.md             # Project overview
+├── requirements.txt      # Python dependencies
+└── .env                  # Securely stores API key
+
