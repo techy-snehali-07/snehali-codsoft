@@ -3,7 +3,6 @@ Welcome to RanchoBot — a rule-based chatbot built to simulate the iconic chara
 🎯 Features
 🧠 Rule-Based Intelligence
 Provides predefined responses using if-else logic based on keywords.
-
 🖥️ Graphical Chat Interface
 Built using Tkinter, offering a clean and interactive user interface.
 
