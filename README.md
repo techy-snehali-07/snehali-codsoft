@@ -1,4 +1,4 @@
-🧠 RanchoBot – An AI-Powered Chatbot Inspired by 3 Idiots
+🧠 Rancho Chatbot – An AI-Powered Chatbot Inspired by 3 Idiots
 RanchoBot is a personality-rich chatbot inspired by the legendary character Ranchoddas Shamaldas Chanchad (Rancho) from the movie 3 Idiots. Built using Python and Tkinter, this chatbot delivers quirky, motivational, and witty responses — now powered by Cohere AI for smarter, more dynamic interactions.
 
 | Feature                             | Description                                                      |
