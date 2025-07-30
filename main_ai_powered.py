@@ -4,7 +4,7 @@ from tkinter import scrolledtext
 import cohere
 
 # ------------------- Cohere API Setup ------------------- #
-COHERE_API_KEY = "NS30PuoSDzQZQaVqk37t861xaNKfxeTzUKfzu8Re"
+COHERE_API_KEY = "API_KEY" //replace with ur api key
 co = cohere.Client(COHERE_API_KEY)
 
 # ------------------- Rancho AI Logic ------------------- #
